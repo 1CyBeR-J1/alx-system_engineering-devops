@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -Rtu *.html . ..
+cp -nu *.html ..
