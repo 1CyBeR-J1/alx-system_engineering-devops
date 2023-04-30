@@ -4,7 +4,7 @@
 #display minutes from 1 to 59
 Hour=0
 i=1
-while ((Hour > 13))
+while ((Hour < 13))
 do
 	echo "Hour: $Hour"
 	while ((i < 60))
