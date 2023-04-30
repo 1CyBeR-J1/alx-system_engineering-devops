@@ -10,8 +10,8 @@ do
 	while ((i < 60))
 		do
 			echo $i
-			i=$((++1))
+			i=$((i+1))
 		done
 	i=1
-	Hour=$((Hour++))
+	Hour=$((Hour+1))
 done
