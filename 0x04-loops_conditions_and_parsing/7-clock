@@ -3,10 +3,10 @@
 #display hours from 0 to 12
 #display minutes from 1 to 59
 Hour=0
-i=1
 while ((Hour < 13))
 do
 	echo "Hour: $Hour"
+	i=1
 	while ((i < 60))
 		do
 			echo $i
