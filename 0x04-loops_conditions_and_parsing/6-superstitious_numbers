@@ -11,13 +11,13 @@ do
 	case $i in
 
 		4)
-			echo "";;
+			echo "bad luck from China";;
 
 		9)
-			echo "";;
+			echo "bad luck from Japan";;
 
 		17)
-			echo "";;
+			echo "bad luck from Italy";;
 	esac
 
         ((i++))
