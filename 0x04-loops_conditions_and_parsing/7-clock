@@ -12,6 +12,6 @@ do
 			echo $i
 			i=$((++1))
 		done
-	i=1	
+	i=1
 	Hour=$((Hour++))
 done
