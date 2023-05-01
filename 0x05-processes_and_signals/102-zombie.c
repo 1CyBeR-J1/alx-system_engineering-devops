@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /**
- * infinite_white - infinite loop
+ * infinite_while - infinite loop
  *
  * Return: 0
  */
