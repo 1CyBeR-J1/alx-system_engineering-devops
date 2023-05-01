@@ -17,7 +17,7 @@ elif [ "$1" == "restart" ]
 then
 	kill "$(pgrep -f /manage_my_process)"
 	rm $FILE
-	./manage_my-process &
+	./manage_my_process &
 	echo $$ > $FILE
 	echo "manage_my_process restarted"
 else
