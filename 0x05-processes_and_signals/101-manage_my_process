@@ -10,12 +10,12 @@ then
 	echo "manage_my_process started"
 elif [ "$1" == "stop" ]
 then
-	kill "$(pgrep /manage_my_process)"
+	kill "$(pgrep -f /manage_my_process)"
 	rm $FILE
 	echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]
 then
-	kill "$(pgrep /manage_my_process)"
+	kill "$(pgrep -f /manage_my_process)"
 	rm $FILE
 	./manage_my_process &
 	echo $$ > $FILE
