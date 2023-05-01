@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Bash (init) script 101-manage_my_process
 #that manages manage_my_process
+
 FILE=/var/run/my_process.pid
 
 if [ "$1" == "start" ]
