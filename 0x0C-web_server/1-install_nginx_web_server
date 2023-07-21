@@ -2,6 +2,6 @@
 #Bash script that configures a new Ubuntu machine
 sudo apt-get update
 apt-get -y install nginx
-chmod -R 755 /var/www
+ufw allow 'Nginx HTTP'
 echo "Hello WOrld!" | tee /var/www/html/index.html
 service nginx restart
