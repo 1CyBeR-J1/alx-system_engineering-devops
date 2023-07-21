@@ -3,13 +3,6 @@
 sudo apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-mkdir -p /var/www/html
 chmod -R 755 /var/www
-echo "server {
-	listen 80;
-	listen [::]:80;
-	location / {
-		echo "Hello World!";
-	}
-}" > /etc/nginx/sites-available/default
+echo "Hello WOrld!" | tee /var/www/html/index.html
 service nginx restart
