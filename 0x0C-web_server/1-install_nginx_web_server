@@ -2,7 +2,6 @@
 #Bash script that configures a new Ubuntu machine
 sudo apt-get update
 apt-get -y install nginx
-sed -i 's/listen.*80 default server/listen 80 default_server;\n\tlisten [::]:80 default_server;/' /etc/nginx/sites-available/default 
-ufw allow 'Nginx HTTP'
+sudo sed -i 's/listen.*80 default server/listen 80 default_server;\n\tlisten [::]:80 default_server;/' /etc/nginx/sites-available/default 
 echo "Hello WOrld!" | tee /var/www/html/index.html
-service nginx restart
+sudo service nginx restart
