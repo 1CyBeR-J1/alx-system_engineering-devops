@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Run Container and return a page with some words
+service apache2 start
