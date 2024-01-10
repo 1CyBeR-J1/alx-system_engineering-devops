@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#Configure your Nginx server to have a custom 404 page 
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/errpage.html
+cat << _EOF_ > /etc/nginx/sites-available/default
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        add_header X-served-By $HOSTNAME;
+
+        location /redirect_me {
+                return 301 https://github.com/1CyBeR-J1;
+	}
+
+	error_page 404 /errpage.html;
+	location = /errpage.html {
+		root /var/www/html;
+		internal;
+	}
+       
+}
+_EOF_
+sudo service nginx restart
