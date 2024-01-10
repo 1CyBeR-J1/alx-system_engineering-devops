@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#Install and configure HAproxy on load balancer server.
+
+sudo apt update
+sudo apt install -y haproxy
+
+sudo cat << _EOF_ > /etc/haproxy/haproxy.cfg
+frontend CyBeRJ-frontend
+   bind *:80
+   mode http
+   timeout client 60s
+   default_backend allservers
+
+backend allservers
+   balance roundrobin
+   timeout connect 10s
+   timeout server 100s
+   mode http
+   server 19465-web-01 100.26.174.69:80 check
+   server 19465-web-02 18.207.141.110:80 check
+_EOF_
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+sudo service haproxy restart
