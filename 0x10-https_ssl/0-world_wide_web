@@ -9,9 +9,9 @@ dns_conf () {
 if [ "$#" == 1 ]
 then
   dns_conf "$1" "www"
-  dns_conf "$1" "100.26.169.102"
-  dns_conf "$1" "100.26.174.69"
-  dns_conf "$1" "18.207.141.110"
+  dns_conf "$1" "lb-01"
+  dns_conf "$1" "web-01"
+  dns_conf "$1" "web-02"
 elif [ "$#" == 2 ]
 then
   dns_conf "$1" "$2"
