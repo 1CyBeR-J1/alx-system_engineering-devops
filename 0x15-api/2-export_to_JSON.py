@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """extend your Python script to export data in the JSON format."""
 
-import sys
-import requests
 import json
+import requests
+import sys
 
 if __name__ == '__main__':
     empId = sys.argv[1]
