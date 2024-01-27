@@ -12,11 +12,11 @@ if __name__ == '__main__':
     response = requests.get(url)
     username = response.json().get('username')
 
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
+    todo_url = url + "/todos"
+    response = requests.get(todo_url)
     tasks = response.json()
 
-    with open('{}.csv'.format(employeeId), 'w') as file:
+    with open('{}.csv'.format(empId), 'w') as file:
         for task in tasks:
             file.write('"{}","{}","{}","{}"\n'
                        .format(empId, username, task.get('completed'),
