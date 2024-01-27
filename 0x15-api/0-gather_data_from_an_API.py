@@ -7,7 +7,7 @@ about employee TODO list progress.
 import requests
 import sys
 
-if __name__ '__main__':
+if __name__ == '__main__':
     empId = int(sys.argv[1])
     base_url = "https://jsonplaceholder.typicode.com/users"
     url = base_url + "/" + empId
