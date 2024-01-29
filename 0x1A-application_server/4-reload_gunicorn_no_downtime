@@ -2,7 +2,7 @@
 # Reload Gunicorn in a graceful way.
 #PID=$(pgrep gunicorn | head -n 1)
 #kill -HUP "$PID"
-#PID=$(pgrep gunicorn)
+PID=$(pgrep gunicorn)
 if [ -n "$PID" ]; then
     # Send the HUP signal to the master process to gracefully reload
     kill -HUP "$PID"
