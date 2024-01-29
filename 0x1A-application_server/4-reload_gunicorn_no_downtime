@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # Reload Gunicorn in a graceful way.
-#PID=$(pgrep gunicorn | head -n 1)
-#kill -HUP "$PID"
-PID=$(pgrep gunicorn)
-if [ -n "$PID" ]; then
-    # Send the HUP signal to the master process to gracefully reload
-    kill -HUP "$PID"
-    echo "Gunicorn reloaded gracefully."
-else
-    echo "Gunicorn is not running."
-fi
+PID=$(pgrep gunicorn | head -n 1)
+pkill -HUP "$PID"
