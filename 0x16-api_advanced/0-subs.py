@@ -3,7 +3,7 @@
 module contains reddit api request
 """
 
-from requests
+import requests
 
 
 def number_of_subscribers(subreddit):
