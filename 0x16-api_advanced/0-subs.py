@@ -3,8 +3,7 @@
 module contains reddit api request
 """
 
-from requests import get
-
+from requests
 
 def number_of_subscribers(subreddit):
     """
@@ -13,13 +12,14 @@ def number_of_subscribers(subreddit):
     for a given subreddit
     """
 
-    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
-    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    r = get(url, headers=user_agent)
-
-    if (r.status_code is 302):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) Apple' +
+        'WebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'
+    }
+    r = requests.get('https://www.reddit.com/r/{:}/about.json'.format(
+        subreddit), headers=headers, allow_redirects=False)
+    if r.status_code >= 300:
         return 0
-    if (r.status_code is 404):
-        return 0
-
-    return r.json()['data'].get('subscribers', 0)
+    json = r.json()
+    data_dict = json.get('data')
+    return (data_dict.get('subscribers'))
