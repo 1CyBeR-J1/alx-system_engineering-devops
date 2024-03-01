@@ -33,19 +33,19 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  ehoneah-frontend-http
+frontend  cyberj-frontend-http
         bind *:80
         mode http
 	http-request set-header X-Forwarded-Proto http
-        default_backend ehoneah-backend
+        default_backend cyberj-backend
 
-frontend ehoneah-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.ehoneah.tech.pem
+frontend cyberj-frontend-https
+	bind *:443 ssl crt /etc/haproxy/certs/www.xlteam.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	http-request redirect scheme https code 301 unless { ssl_fc }
-	default_backend ehoneah-backend
+	default_backend cyberj-backend
 
-backend ehoneah-backend
+backend cyberj-backend
         balance roundrobin
         server 19465-web-01 100.25.19.204:80 check
         server 19465-web-02 54.157.159.85:80 check
